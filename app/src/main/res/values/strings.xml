@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">InterviewExam</string>
+    <string name="empty_value">無備註</string>
+    <string name="title_id">id:</string>
+    <string name="title_name">name:</string>
+    <string name="title_width">width:</string>
+    <string name="title_height">height:</string>
+    <string name="title_box_count">box_count:</string>
+    <string name="title_remark">備註:</string>
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="interview.exam.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="interview.exam.ui.item_detail.ItemDetailFragment"
+        android:label="ItemDetailFragment" >
+        <argument
+            android:name="itemId"
+            app:argType="string"/>
+    </fragment>
+</navigation>

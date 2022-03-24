@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="getItem"
+            type="interview.exam.data.local.entity.GetItem" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+        <ImageView
+            android:id="@+id/img"
+            app:layout_constraintTop_toTopOf="@id/tv_id"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_box_count"
+            app:layout_constraintWidth_max="150dp"
+            app:layout_constraintWidth_min="150dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:setImage="@{getItem.url}"
+            android:scaleType="fitCenter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+        <TextView
+            android:id="@+id/tv_id"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/img"
+            android:text="@{@string/title_id + getItem.id}"
+            style="@style/text_style"
+            />
+        <TextView
+            android:id="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_id"
+            app:layout_constraintLeft_toRightOf="@+id/img"
+            app:layout_constraintRight_toRightOf="parent"
+
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text="@{@string/title_name + getItem.name}"
+            style="@style/text_style"/>
+        <TextView
+            android:id="@+id/tv_remark"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintLeft_toRightOf="@+id/img"
+            android:text="@{(getItem.remark == null ? @string/empty_value : @string/title_remark + getItem.remark) }"
+            style="@style/text_style"/>
+
+        <View
+            app:layout_constraintTop_toBottomOf="@+id/tv_box_count"
+            android:layout_marginTop="@dimen/default_gap"
+            android:background="#d2d2d2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
